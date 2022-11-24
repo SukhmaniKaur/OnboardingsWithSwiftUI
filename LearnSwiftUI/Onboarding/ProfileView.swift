@@ -8,8 +8,53 @@
 import SwiftUI
 
 struct ProfileView: View {
+    
+    // app storage
+    @AppStorage("name") var currentUserName: String?
+    @AppStorage("age") var currentUserAge: Int?
+    @AppStorage("gender") var currentUserGender: String?
+    @AppStorage("Signed_in") var currentUserSignedIn: Bool = false
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack(spacing: 20) {
+            Image(systemName: "person.circle.fill")
+                .resizable()
+                .scaledToFit()
+                .frame(width: 150, height: 150)
+            Text(currentUserName ?? "Your name here")
+            Text("This user is \(currentUserAge ?? 0) years old!")
+            Text("Their gender is \(currentUserGender ?? "unknown")")
+            
+            Text("SIGN OUT")
+                .foregroundColor(.white)
+                .font(.headline)
+                .frame(height: 55)
+                .frame(maxWidth: .infinity)
+                .background(.black)
+                .cornerRadius(10)
+                .onTapGesture {
+                    signOut()
+                }
+        }
+        .font(.title)
+        .foregroundColor(.orange)
+        .padding()
+        .padding(.vertical, 40)
+        .background(.white)
+        .cornerRadius(10)
+        .shadow(radius: 10)
+        .padding(.horizontal, 30)
+        
+    }
+    
+    func signOut() {
+        withAnimation(.spring()) {
+            currentUserName = nil
+            currentUserAge = nil
+            currentUserGender = nil
+            currentUserSignedIn = false
+
+        }
     }
 }
 
