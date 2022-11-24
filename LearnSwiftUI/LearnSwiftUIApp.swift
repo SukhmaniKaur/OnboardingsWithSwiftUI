@@ -11,7 +11,25 @@ import SwiftUI
 struct LearnSwiftUIApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            IntroView()
         }
     }
 }
+
+
+
+// AGAMDEEP SINGH
+//AGAMDECEP SINGH
+//AGAAMDEEP SINGH
+//AGAMDEEP SINGH
+//AGAMDEEP SIK ;-00p;0o-p[]\
+
+// agamdeep singh
+// agamdeep singh
+// agamdeep singh
+// agamdeep singh
+// agamdeep singh
+
+// agamdeep singh
+// agamdeep singh
+// aamdeep
